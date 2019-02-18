@@ -1,4 +1,5 @@
 
+
 public class User {
 	
 	private String name;
@@ -9,7 +10,7 @@ public class User {
 	public User(String name, String password) {
 		this.name = name;
 		this.password = password;
-		id = null; 
+		id = null;
 	}
 	
 	public User(String name, String password, IDStuff id) {
@@ -51,7 +52,7 @@ public class User {
 		if(!(this.equals(other))) {
 			return false;
 		}
-		if(this.id.comparer(other.id)) {
+		if(this.id.compaerer(other.id)) {
 			return true;
 		}
 		else {
