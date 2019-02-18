@@ -6,20 +6,22 @@ public class Biometrics {
 	private ArrayList<Long> timePressedRight;
 	private ArrayList<Long> timePressedUp;
 	private ArrayList<Long> timePressedDown;
+	private long timeLeft;
+	private long timeRight;
+	private long timeUp;
+	private long timeDown;
 	private long startTime;
 	private long endTime;
 	private boolean isSuccess;
 
-	public Biometrics() {
-
-	}
+	public Biometrics() {} 
 
 	public Biometrics(ArrayList<Integer> keyPresses, ArrayList<Long> left, ArrayList<Long> right, ArrayList<Long> up, ArrayList<Long> down, long startTime, long endTime, boolean isSuccess) {
 		this.keyPresses = keyPresses;
 		timePressedLeft = left;
 		timePressedRight = right;
 		timePressedUp = up;
-		timePressedDown = down;
+		timePressedDown = down; 
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.isSuccess = isSuccess;
@@ -43,6 +45,38 @@ public class Biometrics {
 	public long getTotalTime() {
 		return endTime - startTime;
 	}
+	public long getTimeLeft() {
+		for(Long l: timePressedLeft) {
+			timeLeft += l;
+		}
+		timeLeft = timeLeft/timePressedLeft.size();
+		return timeLeft;
+	}
+
+	public long getTimeRight() {
+		for(Long l: timePressedRight) {
+			timeRight += l;
+		}
+		timeRight = timeRight/timePressedRight.size();
+		return timeRight;
+	}
+
+	public long getTimeUp() {
+		for(Long l: timePressedUp) {
+			timeUp += l;
+		}
+		timeUp = timeUp/timePressedUp.size();
+		return timeUp;
+	}
+
+	public long getTimeDown() {
+		for(Long l: timePressedDown) {
+			timeDown += l;
+		}
+		timeDown = timeDown/timePressedDown.size();
+		return timeDown;
+	}
+
 	public String toString() {
 		String result = "";
 		String left = new String("Left: ");
