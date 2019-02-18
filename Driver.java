@@ -11,7 +11,7 @@ public class Driver extends Frame implements WindowListener,ActionListener {
         Server storedInfo = new Server();
         
         public static void main(String[] args) {
-                Driver myWindow = new Driver();
+                Driver myWindow = new Driver("Driver");
                 myWindow.setSize(700,500);
                 myWindow.setVisible(true);
         }
@@ -20,25 +20,28 @@ public class Driver extends Frame implements WindowListener,ActionListener {
         	return storedInfo.users;
         }
         
-        public Driver() {
+        public Driver(String title) {
+        	
+                super(title);
                 setLayout(new FlowLayout());
                 addWindowListener(this);
-                
                 loginButton = new Button("Login");
                 add(loginButton);
                 loginButton.addActionListener(this);
-                
                 newUserButton = new Button("Create new user");
                 add(newUserButton);
                 newUserButton.addActionListener(this);
+                
+                for(User name: storedInfo.users) {
+                	if(name.getName.equals(username)
+                		name.getIndex();
+                }
         }
 
         public void actionPerformed(ActionEvent e) {
         	if(e.getSource() == loginButton) {
-        		 LoginWindow nw = new LoginWindow();
-        	}
-        	if(e.getSource() == newUserButton) {
-        		MakeNew win = new MakeNew();
+        		 Login nw = new Login();
+        		 Login.NewScreen();
         	}
         }
 
